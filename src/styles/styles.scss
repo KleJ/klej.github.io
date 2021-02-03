@@ -9,6 +9,7 @@ html {
 html {
   font-size: $base-font-size;
   line-height: $base-line-height;
+  font-family: "SF Pro Display", system-ui;
   color: $blue-23;
 }
 
@@ -21,4 +22,5 @@ html {
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+  padding: 12px;
 }
