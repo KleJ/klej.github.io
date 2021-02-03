@@ -1,16 +1,18 @@
 <template>
   <div class="company">
     <span class="company__name">
-      {{ name }}
+      {{ company.name }}
     </span>
-    <div class="company__logo" :class="type"></div>
+    <a :href="company.link">
+      <div class="company__logo" :class="company.type"/>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Company',
-  props: ['name', 'type']
+  props: ['company']
 };
 </script>
 
@@ -30,7 +32,7 @@ export default {
   background: $blue-2;
   line-height: 22px;
   color: $white;
-  font-size: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
 
 .company__logo {
@@ -42,9 +44,9 @@ export default {
     content: url('../assets/companies/tsys.png');
   }
 
-  //&.bookingcom {
-  //  content: url('../assets/BOOKINGCOM.svg');
-  //}
+  &.epam {
+    content: url('../assets/companies/epam.png');
+  }
   //
   //&.holidu {
   //  content: url('../assets/HOLIDU.svg');

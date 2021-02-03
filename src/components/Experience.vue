@@ -1,6 +1,6 @@
 <template>
   <div class="experience">
-    <Company :name="data.company" :type="data.type"/>
+    <Company :company="data.company"/>
     <h3>{{ data.title }}</h3>
     <div class="subtitle">
       <div class="location">
@@ -41,6 +41,7 @@ export default {
 @import "../styles/variables";
 
 .experience {
+  margin: 26px 0;
   padding-bottom: 26px;
   border-bottom: 1px solid $gray-225;
 }

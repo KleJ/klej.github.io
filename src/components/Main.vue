@@ -12,7 +12,7 @@
       <Profile/>
       <h2>Experience</h2>
       <Experience
-        v-for="(work, index) in workLog" :data="work" :key="index"/>
+          v-for="(work, index) in workLog" :data="work" :key="index"/>
       <h2>Education</h2>
       <h2>Languages</h2>
       <h2>Skills</h2>
@@ -34,8 +34,11 @@ export default {
       workLog: [
         {
           title: 'Principal Frontend Developer',
-          company: 'T-Systems',
-          type: 'tsys',
+          company: {
+            name: 'T-Systems',
+            link: 'https://www.t-systems.com/',
+            type: 'tsys'
+          },
           location: 'Saint Petersburg',
           startDate: 'May 2018',
           endDate: 'Present',
@@ -46,14 +49,66 @@ export default {
           ],
           stack: ['Vue.js/Vuex', 'Angular', 'Angular Material', 'TypeScript', 'RxJs', 'Webpack', 'Sass', 'Leaflet', 'Keycloack.js', 'eslint/prettier', 'Git']
         },
-        /*{
+        {
+          title: 'Senior Frontend Developer',
+          company: {
+            name: 'EPAM Systems',
+            link: 'https://www.epam.com/',
+            type: 'epam',
+          },
+          location: 'Saint Petersburg',
+          startDate: 'June 2016',
+          endDate: 'April 2018',
+          desc: [
+            'Developed a base framework, to be used for other company projects',
+            'Created the analytics widget based on D3.js and Sankey chart',
+            'Improved code quality and optimized performance. Applied TDD'
+          ],
+          stack: [
+            'Angular.js','Angular','Webpack','Typescript','D3.js','Sankey','Sass','Git','Electron.js'
+          ]
+        }/*,
+        {
           title: '',
           company: '',
+          type: 'tsys',
           location: '',
           starDate: '',
           endDate: '',
-          desc: '',
-          stack: []
+          desc: [
+            ''
+          ],
+          stack: [
+            ''
+          ]
+        },
+        {
+          title: '',
+          company: '',
+          type: 'tsys',
+          location: '',
+          starDate: '',
+          endDate: '',
+          desc: [
+            ''
+          ],
+          stack: [
+            ''
+          ]
+        },
+        {
+          title: '',
+          company: '',
+          type: 'tsys',
+          location: '',
+          starDate: '',
+          endDate: '',
+          desc: [
+            ''
+          ],
+          stack: [
+            ''
+          ]
         }*/
       ]
     };
