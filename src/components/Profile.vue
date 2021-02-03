@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       descriptions: [
-        'Passionate Front-End Developer with 8+ years of hands-on experience in commercial software development',
+        'Passionate Front-End Developer with 9+ years of hands-on experience in commercial software development',
         'Major experience with modern frameworks (Vue.js, Angular), module bundlers, version control systems and excellent knowledge of core JavaScript',
         'Good team player with effective communication skills'
       ]

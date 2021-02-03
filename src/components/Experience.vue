@@ -9,6 +9,7 @@
       </div>
       <div>{{ data.startDate }} - {{ data.endDate }}</div>
     </div>
+    <div v-if="data.project" class="project">{{ data.project }}</div>
     <ul class="list">
       <li
           class="list__item"
@@ -67,6 +68,12 @@ export default {
   position: relative;
   height: 18px;
   content: url('../assets/rus.png');
+}
+
+.project {
+  padding-left: 8px;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .list {

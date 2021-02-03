@@ -47,9 +47,17 @@ export default {
   &.epam {
     content: url('../assets/companies/epam.png');
   }
-  //
-  //&.holidu {
-  //  content: url('../assets/HOLIDU.svg');
-  //}
+
+  &.nexign {
+    content: url('../assets/companies/nexign.png');
+  }
+
+  &.smart {
+    content: url('../assets/companies/smart.png');
+  }
+
+  &.zavod {
+    content: url('../assets/companies/zavod.png');
+  }
 }
 </style>

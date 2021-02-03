@@ -65,51 +65,69 @@ export default {
             'Improved code quality and optimized performance. Applied TDD'
           ],
           stack: [
-            'Angular.js','Angular','Webpack','Typescript','D3.js','Sankey','Sass','Git','Electron.js'
-          ]
-        }/*,
-        {
-          title: '',
-          company: '',
-          type: 'tsys',
-          location: '',
-          starDate: '',
-          endDate: '',
-          desc: [
-            ''
-          ],
-          stack: [
-            ''
+            'Angular.js', 'Angular', 'Webpack', 'Typescript', 'D3.js', 'Sankey', 'Sass', 'Git', 'Electron.js'
           ]
         },
         {
-          title: '',
-          company: '',
-          type: 'tsys',
-          location: '',
-          starDate: '',
-          endDate: '',
+          title: 'Frontend Developer',
+          company: {
+            name: 'Nexign',
+            link: 'https://nexign.com/',
+            type: 'nexign',
+          },
+          location: 'Samara',
+          startDate: 'November 2015',
+          endDate: 'February 2016',
           desc: [
-            ''
+            'Development of new version of the subsystem for automated processing of sales operations (SFA)',
+            'Contributed to solution design for the new version of SFA system',
+            'Applied Test-Driven Development approach',
+            'Migrated existing modules to the Angular framework'
           ],
           stack: [
-            ''
+            'Angular.js', 'Webpack', 'Typescript', 'Sass', 'Git'
           ]
         },
         {
-          title: '',
-          company: '',
-          type: 'tsys',
-          location: '',
-          starDate: '',
-          endDate: '',
+          title: 'Frontend Developer',
+          company: {
+            name: 'Smart Solutions',
+            link: 'http://smartsolutions-123.ru/',
+            type: 'smart',
+          },
+          location: 'Samara',
+          startDate: 'March 2015',
+          endDate: 'November 2015',
+          project: 'International project ARUM, adaptive production management',
           desc: [
-            ''
+            'Infographic visualisation by D3.js. Integration of voting system',
+            'Developed UI interacting with Restful API for multi-agent scheduler',
+            'Created UI/UX for task distribution system for production management'
           ],
           stack: [
-            ''
+            'Angular.js', 'Webpack', 'D3.js', 'Sass/Less', 'Git'
           ]
-        }*/
+        },
+        {
+          title: 'Full Stack Developer',
+          company: {
+            name: 'WebZavod',
+            link: 'https://webzavod.ru/',
+            type: 'zavod',
+          },
+          location: 'Samara',
+          startDate: 'January 2011',
+          endDate: 'January 2014',
+          desc: [
+            'Developed and maintained various CMS modules',
+            'Designed DB architecture for sites and regional portals of corporate customers',
+            'Developed bash and perl scripts for process automation',
+            'Integrated third-party modules'
+          ],
+          stack: [
+            'Perl', 'JavaScript', 'jQuery', 'MySQL', 'RegEx', 'Bash'
+          ]
+        }
       ]
     };
   }
