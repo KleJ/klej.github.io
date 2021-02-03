@@ -61,7 +61,6 @@ export default {
 
 .location__title {
   margin-left: 6px;
-  align-content: center;
 }
 
 .location__country {

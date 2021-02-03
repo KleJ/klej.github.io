@@ -14,6 +14,7 @@
       <Experience
           v-for="(work, index) in workLog" :data="work" :key="index"/>
       <h2>Education</h2>
+      <Education :data="education"/>
       <h2>Languages</h2>
       <h2>Skills</h2>
     </div>
@@ -23,10 +24,11 @@
 <script>
 import Profile from "@/components/Profile";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 export default {
   name: 'Main',
-  components: {Experience, Profile},
+  components: {Education, Experience, Profile},
   data() {
     return {
       author: 'Mikhail Iaruntcev',
@@ -128,7 +130,15 @@ export default {
             'Perl', 'JavaScript', 'jQuery', 'MySQL', 'RegEx', 'Bash'
           ]
         }
-      ]
+      ],
+      education: {
+        university: 'Samara State Technical University',
+        link: 'https://samgtu.ru/',
+        location: 'Samara',
+        endDate: '2012',
+        degree: 'Engineer\'s degree',
+        area: 'Computer and Information Systems Security'
+      }
     };
   }
 };
