@@ -10,6 +10,7 @@ html {
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-family: "SF Pro Display", system-ui;
+  font-weight: $font-weight-regular;
   color: $blue-23;
 }
 
@@ -23,4 +24,12 @@ html {
   flex-direction: column;
   margin: 0 auto;
   padding: 12px;
+}
+
+h2 {
+  color: $gray-173;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: $font-weight-bold;
+  margin: 18px 0;
 }
