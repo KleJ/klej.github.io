@@ -1,0 +1,13 @@
+@import "variables";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $blue-23;
+}

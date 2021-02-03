@@ -1,5 +1,5 @@
 <template>
-  <div class="reviews">
+  <div class="cv">
     <div>Start page</div>
   </div>
 </template>
