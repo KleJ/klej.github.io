@@ -11,3 +11,14 @@ html {
   line-height: $base-line-height;
   color: $blue-23;
 }
+
+.container {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: auto;
+  max-width: $container-width;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
