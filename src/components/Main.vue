@@ -6,6 +6,14 @@
     </div>
     <div class="main">
       <div class="main__bar">
+        <a href="https://www.linkedin.com/in/iaruntcev/" class="linked">
+          <span class="linked__icon"/>
+          <span class="linked__text">Linkedin.com/in/iaruntcev</span>
+        </a>
+        <a href="../assets/Mike_Iaruntcev_CV_tech.pdf" class="download" download>
+          <span class="download__icon"/>
+          <span class="download__text">Download PDF version</span>
+        </a>
       </div>
 
       <h2>Profile</h2>
@@ -194,10 +202,29 @@ export default {
 
 .main__bar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  line-height: 45px;
   margin-bottom: 40px;
+}
+
+.linked,
+.download {
+  display: flex;
+  text-decoration: none;
+}
+
+.download__icon {
+  content: url('../assets/download.png');
+  height: 24px;
+}
+
+.linked__icon {
+  content: url('../assets/in.png');
+  height: 24px;
+}
+
+.linked__text,
+.download__text {
+  margin-left: 6px;
 }
 
 .langs {
@@ -207,6 +234,7 @@ export default {
 
 .lang {
   display: flex;
+  margin-bottom: 36px;
 }
 
 .lang__icon {
