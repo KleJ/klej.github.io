@@ -10,13 +10,21 @@
 
       <h2>Profile</h2>
       <Profile/>
+
       <h2>Experience</h2>
       <Experience
           v-for="(work, index) in workLog" :data="work" :key="index"/>
+
       <h2>Education</h2>
       <Education :data="education"/>
+
       <h2>Languages</h2>
-      <h2>Skills</h2>
+      <div class="langs">
+        <div v-for="(lang, index) in languages" :key="index" class="lang">
+          <span class="lang__icon" :class="lang.icon"/>
+          <div class="lang__name"><b>{{ lang.lang }}</b> - {{ lang.level }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -138,7 +146,19 @@ export default {
         endDate: '2012',
         degree: 'Engineer\'s degree',
         area: 'Computer and Information Systems Security'
-      }
+      },
+      languages: [
+        {
+          lang: 'Russian',
+          icon: 'rus',
+          level: 'Native'
+        },
+        {
+          lang: 'English',
+          icon: 'eng',
+          level: 'Intermediate'
+        }
+      ]
     };
   }
 };
@@ -178,5 +198,31 @@ export default {
   justify-content: space-between;
   line-height: 45px;
   margin-bottom: 40px;
+}
+
+.langs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lang {
+  display: flex;
+}
+
+.lang__icon {
+  position: relative;
+  height: 24px;
+
+  &.rus {
+    content: url('../assets/rus.png');
+  }
+
+  &.eng {
+    content: url('../assets/eng.png');
+  }
+}
+
+.lang__name {
+  margin-left: 6px;
 }
 </style>
