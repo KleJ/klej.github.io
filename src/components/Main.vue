@@ -176,7 +176,6 @@ export default {
 @import "../styles/variables";
 
 .header {
-  color: $gold-96;
   margin: 36px 0 72px;
 }
 
@@ -184,7 +183,7 @@ export default {
   font-size: 32px;
   line-height: 32px;
   font-weight: $font-weight-semi;
-  border-bottom: solid 2px;
+  border-bottom: solid 2px $gold-96;
 }
 
 .header__position {
@@ -202,6 +201,7 @@ export default {
 
 .main__bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
 }
@@ -210,6 +210,7 @@ export default {
 .download {
   display: flex;
   text-decoration: none;
+  margin: 6px;
 }
 
 .download__icon {
@@ -229,12 +230,14 @@ export default {
 
 .langs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 36px;
 }
 
 .lang {
   display: flex;
-  margin-bottom: 36px;
+  margin: 6px;
 }
 
 .lang__icon {
