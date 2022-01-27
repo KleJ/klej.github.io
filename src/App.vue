@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Main/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from "@/components/Main";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Main
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "styles/styles.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+}
+
+#app::before {
+  position: absolute;
+  content: '';
+  height: $background-height;
+  width: 100%;
+  background-image: url("./assets/karelia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: ellipse(125% 100% at 50% 0);
 }
 </style>

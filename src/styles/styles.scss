@@ -1,0 +1,42 @@
+@import "variables";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-family: "SF Pro Display", system-ui;
+  font-weight: $font-weight-regular;
+  color: $blue-23;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: auto;
+  max-width: $container-width;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+h2 {
+  color: $gray-173;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: $font-weight-bold;
+  margin: 18px 0;
+}
+
+h3 {
+  font-weight: $font-weight-semi;
+  margin: 12px 0 4px;
+  font-size: 18px;
+  line-height: 24px;
+}
