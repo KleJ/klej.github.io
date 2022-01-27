@@ -14,9 +14,10 @@ export default {
   data() {
     return {
       descriptions: [
-        'Passionate Front-End Developer with 9+ years of hands-on experience in commercial software development',
-        'Major experience with modern frameworks (Vue.js, Angular), module bundlers, version control systems and excellent knowledge of core JavaScript',
-        'Good team player with effective communication skills'
+          'Qualified Front-End Developer with 10+ years of hands-on experience in commercial software development',
+          'Vast experience with modern frameworks (Vue.js, Angular), module bundlers, version control systems, and excellent JavaScript knowledge',
+          'Passionate about software development and striving for a quality start from project configuration to the code review process',
+          'Great team player with excellent communication skills'
       ]
     };
   }
