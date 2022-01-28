@@ -10,10 +10,10 @@
           <span class="linked__icon"/>
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
         </a>
-<!--        <a href="../assets/Mike_Iaruntcev_CV_tech.pdf" class="download" download>
-          <span class="download__icon"/>
-          <span class="download__text">Download PDF version</span>
-        </a>-->
+        <!--        <a href="../assets/Mike_Iaruntcev_CV_tech.pdf" class="download" download>
+                  <span class="download__icon"/>
+                  <span class="download__text">Download PDF version</span>
+                </a>-->
       </div>
 
       <h2>Profile</h2>
@@ -61,11 +61,12 @@ export default {
           startDate: 'May 2018',
           endDate: 'Present',
           desc: [
-            'Worked on the project in IoT area',
+            'Working on the project in IoT area',
             'Developed a data marketplace portal completely from scratch. Close collaboration with design team',
-            'Created a component base for new projects in future. Managed customer requirements and estimated task durations'
+            'Created a component base for new projects',
+            'Building the application for tracking system based on Cumulocity IoT'
           ],
-          stack: ['Vue.js/Vuex', 'Angular', 'Angular Material', 'TypeScript', 'RxJs', 'Webpack', 'Sass', 'Leaflet', 'Keycloack.js', 'eslint/prettier', 'Git']
+          stack: ['Vue.js', 'Angular', 'Angular Material', 'TypeScript', 'RxJs', 'Webpack', 'Sass', 'Leaflet', 'Keycloack.js', 'ESLint/Prettier', 'Git', 'Cumulocity']
         },
         {
           title: 'Senior Frontend Developer',
@@ -97,7 +98,7 @@ export default {
           startDate: 'November 2015',
           endDate: 'February 2016',
           desc: [
-            'Development of new version of the subsystem for automated processing of sales operations (SFA)',
+            'Development of new version of the system for automated processing of sales operations (SFA)',
             'Contributed to solution design for the new version of SFA system',
             'Applied Test-Driven Development approach',
             'Migrated existing modules to the Angular framework'
@@ -164,7 +165,7 @@ export default {
         {
           lang: 'English',
           icon: 'eng',
-          level: 'Intermediate'
+          level: 'Upper-Intermediate'
         }
       ]
     };
