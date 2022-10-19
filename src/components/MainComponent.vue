@@ -17,14 +17,14 @@
       </div>
 
       <h2>Profile</h2>
-      <Profile/>
+      <ProfileBlock/>
 
       <h2>Experience</h2>
-      <Experience
+      <ExperienceBlock
           v-for="(work, index) in workLog" :data="work" :key="index"/>
 
       <h2>Education</h2>
-      <Education :data="education"/>
+      <EducationBlock :data="education"/>
 
       <h2>Languages</h2>
       <div class="langs">
@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import Profile from "@/components/Profile";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
+import EducationBlock from "./EducationBlock";
+import ExperienceBlock from "./ExperienceBlock";
+import ProfileBlock from "./ProfileBlock";
 
 export default {
-  name: 'Main',
-  components: {Education, Experience, Profile},
+  name: 'MainComponent',
+  components: {EducationBlock, ExperienceBlock, ProfileBlock},
   data() {
     return {
       author: 'Mikhail Iaruntcev',

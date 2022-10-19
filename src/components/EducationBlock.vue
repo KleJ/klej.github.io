@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Education',
+  name: 'EducationBlock',
   props: ['data']
 };
 </script>

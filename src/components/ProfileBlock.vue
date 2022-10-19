@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Profile',
+  name: 'ProfileBlock',
   data() {
     return {
       descriptions: [

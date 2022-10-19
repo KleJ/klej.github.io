@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Company',
+  name: 'CompanyItem',
   props: ['company']
 };
 </script>
