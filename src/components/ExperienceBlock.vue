@@ -1,6 +1,6 @@
 <template>
   <div class="experience">
-    <Company :company="data.company"/>
+    <CompanyItem :company="data.company"/>
     <h3>{{ data.title }}</h3>
     <div class="subtitle">
       <div class="location">
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import Company from "@/components/Company";
+import CompanyItem from "./CompanyItem";
 
 export default {
-  name: 'Experience',
-  components: {Company},
+  name: 'ExperienceBlock',
+  components: {CompanyItem},
   props: ['data']
 };
 </script>

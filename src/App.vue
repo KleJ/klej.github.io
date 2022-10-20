@@ -1,14 +1,14 @@
 <template>
-  <Main/>
+  <MainComponent/>
 </template>
 
 <script>
-import Main from "@/components/Main";
+import MainComponent from "./components/MainComponent";
 
 export default {
   name: 'App',
   components: {
-    Main
+    MainComponent
   }
 }
 </script>
