@@ -10,10 +10,10 @@
           <span class="linked__icon"/>
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
         </a>
-        <!--        <a href="../assets/Mike_Iaruntcev_CV_tech.pdf" class="download" download>
-                  <span class="download__icon"/>
-                  <span class="download__text">Download PDF version</span>
-                </a>-->
+        <a :href="`${publicPath}mike_cv.pdf`" class="download" download>
+          <span class="download__icon"/>
+          <span class="download__text">Download CV</span>
+        </a>
       </div>
 
       <h2>Profile</h2>
@@ -47,6 +47,7 @@ export default {
   components: {EducationBlock, ExperienceBlock, ProfileBlock},
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       author: 'Mikhail Iaruntcev',
       position: 'Senior Software Engineer',
       workLog: [
