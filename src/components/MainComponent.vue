@@ -43,6 +43,9 @@
       </section>
     </div>
   </div>
+  <div class="footer">
+    <div class="footer__container">test p</div>
+  </div>
 </template>
 
 <script>
@@ -231,7 +234,7 @@ export default {
   font-weight: $font-weight-medium;
   color: $white;
   background-color: $gray-173;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   width: fit-content;
 
@@ -292,6 +295,19 @@ export default {
 
 .lang__name {
   margin-left: 6px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: lightslategray;
+  height: 240px;
+
+  .footer__container {
+    max-width: $container-width;
+    flex: 1;
+    padding: 12px;
+  }
 }
 
 @media screen and (max-width: 600px) {
