@@ -16,23 +16,31 @@
         </a>
       </div>
 
-      <h2>Profile</h2>
-      <ProfileBlock/>
+      <section class="section__profile">
+        <h2>Profile</h2>
+        <ProfileBlock/>
+      </section>
 
-      <h2>Experience</h2>
-      <ExperienceBlock
-          v-for="(work, index) in workLog" :data="work" :key="index"/>
+      <section>
+        <h2>Experience</h2>
+        <ExperienceBlock
+            v-for="(work, index) in workLog" :data="work" :key="index"/>
+      </section>
 
-      <h2>Education</h2>
-      <EducationBlock :data="education"/>
+      <section>
+        <h2>Education</h2>
+        <EducationBlock :data="education"/>
+      </section>
 
-      <h2>Languages</h2>
-      <div class="langs">
-        <div v-for="(lang, index) in languages" :key="index" class="lang">
-          <span class="lang__icon" :class="lang.icon"/>
-          <div class="lang__name"><b>{{ lang.lang }}</b> - {{ lang.level }}</div>
+      <section>
+        <h2>Languages</h2>
+        <div class="langs">
+          <div v-for="(lang, index) in languages" :key="index" class="lang">
+            <span class="lang__icon" :class="lang.icon"/>
+            <div class="lang__name"><b>{{ lang.lang }}</b> - {{ lang.level }}</div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -197,6 +205,8 @@ export default {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   padding: 40px 30px;
   border-radius: 6px;
   background: $white;
@@ -262,6 +272,11 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
+  .section__profile {
+    order: -1;
+    margin-bottom: 24px;
+  }
+
   .main__bar {
     flex-direction: column;
 
