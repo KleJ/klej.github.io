@@ -207,6 +207,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
+  flex-direction: row;
 }
 
 .linked,
@@ -258,5 +259,20 @@ export default {
 
 .lang__name {
   margin-left: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .main__bar {
+    flex-direction: column;
+
+    .download__text {
+      margin-left: 6px;
+    }
+
+    .download__icon {
+      order: -1;
+      margin-left: 0;
+    }
+  }
 }
 </style>
