@@ -3,8 +3,10 @@
     <span class="company__name">
       {{ company.name }}
     </span>
-    <a :href="company.link">
-      <div class="company__logo" :class="company.type"/>
+    <a
+        :href="company.link"
+        class="company__logo">
+      <img class="company__logo--img" :class="company.type" :alt="company.name"/>
     </a>
   </div>
 </template>
@@ -24,39 +26,43 @@ export default {
   flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
+  line-height: 22px;
 }
 
 .company__name {
   padding: 5px 10px;
   border-radius: 8px;
   background: $blue-2;
-  line-height: 22px;
   color: $white;
   font-weight: $font-weight-bold;
 }
 
 .company__logo {
-  position: relative;
-  left: 14px;
+  margin-left: 14px;
   height: 22px;
 
-  &.tsys {
+  .company__logo--img {
+    max-height: 22px;
+    vertical-align: middle;
+  }
+
+  .tsys {
     content: url('../assets/companies/tsys.png');
   }
 
-  &.epam {
+  .epam {
     content: url('../assets/companies/epam.png');
   }
 
-  &.nexign {
+  .nexign {
     content: url('../assets/companies/nexign.png');
   }
 
-  &.smart {
+  .smart {
     content: url('../assets/companies/smart.png');
   }
 
-  &.zavod {
+  .zavod {
     content: url('../assets/companies/zavod.png');
   }
 }
