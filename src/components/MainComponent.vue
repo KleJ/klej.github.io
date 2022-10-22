@@ -11,8 +11,8 @@
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
         </a>
         <a :href="`${publicPath}mike_cv.pdf`" class="download" download>
-          <span class="download__icon"/>
           <span class="download__text">Download CV</span>
+          <span class="download__icon"/>
         </a>
       </div>
 
@@ -227,7 +227,7 @@ export default {
 }
 
 .linked__text,
-.download__text {
+.download__icon {
   margin-left: 6px;
 }
 
