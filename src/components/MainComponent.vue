@@ -224,7 +224,20 @@ export default {
 .download {
   display: flex;
   text-decoration: none;
-  margin: 6px;
+  margin: 6px 0;
+}
+
+.download:hover {
+  font-weight: $font-weight-medium;
+  color: $white;
+  background-color: $gray-173;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  border-radius: 2px;
+  width: fit-content;
+
+  .download__icon {
+    content: url('../assets/download_white.png');
+  }
 }
 
 .download__icon {
@@ -238,8 +251,18 @@ export default {
 }
 
 .linked__text,
-.download__icon {
-  margin-left: 6px;
+.download__text {
+  padding: 0 6px;
+}
+
+.linked__text:hover {
+  $li-color: #0078bd;
+
+  background-color: $li-color;
+  border-radius: 0 2px 2px 0;
+  color: $white;
+  font-weight: $font-weight-medium;
+  margin-left: -2px;
 }
 
 .langs {
@@ -280,13 +303,8 @@ export default {
   .main__bar {
     flex-direction: column;
 
-    .download__text {
-      margin-left: 6px;
-    }
-
     .download__icon {
       order: -1;
-      margin-left: 0;
     }
   }
 }
