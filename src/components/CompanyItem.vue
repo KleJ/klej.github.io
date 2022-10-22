@@ -44,6 +44,11 @@ export default {
   .company__logo--img {
     max-height: 22px;
     vertical-align: middle;
+    transition: 1s;
+
+    &:hover {
+      max-height: 28px;
+    }
   }
 
   .tsys {
