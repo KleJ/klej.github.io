@@ -16,23 +16,31 @@
         </a>
       </div>
 
-      <h2>Profile</h2>
-      <ProfileBlock/>
+      <section class="section__profile">
+        <h2>Profile</h2>
+        <ProfileBlock/>
+      </section>
 
-      <h2>Experience</h2>
-      <ExperienceBlock
-          v-for="(work, index) in workLog" :data="work" :key="index"/>
+      <section>
+        <h2>Experience</h2>
+        <ExperienceBlock
+            v-for="(work, index) in workLog" :data="work" :key="index"/>
+      </section>
 
-      <h2>Education</h2>
-      <EducationBlock :data="education"/>
+      <section>
+        <h2>Education</h2>
+        <EducationBlock :data="education"/>
+      </section>
 
-      <h2>Languages</h2>
-      <div class="langs">
-        <div v-for="(lang, index) in languages" :key="index" class="lang">
-          <span class="lang__icon" :class="lang.icon"/>
-          <div class="lang__name"><b>{{ lang.lang }}</b> - {{ lang.level }}</div>
+      <section>
+        <h2>Languages</h2>
+        <div class="langs">
+          <div v-for="(lang, index) in languages" :key="index" class="lang">
+            <span class="lang__icon" :class="lang.icon"/>
+            <div class="lang__name"><b>{{ lang.lang }}</b> - {{ lang.level }}</div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -151,7 +159,7 @@ export default {
       ],
       education: {
         university: 'Samara State Technical University',
-        link: 'https://samgtu.ru/',
+        link: 'https://samgtu.com/',
         location: 'Samara',
         endDate: '2012',
         degree: 'Engineer\'s degree',
@@ -197,6 +205,8 @@ export default {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   padding: 40px 30px;
   border-radius: 6px;
   background: $white;
@@ -207,13 +217,27 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
+  flex-direction: row;
 }
 
 .linked,
 .download {
   display: flex;
   text-decoration: none;
-  margin: 6px;
+  margin: 6px 0;
+}
+
+.download:hover {
+  font-weight: $font-weight-medium;
+  color: $white;
+  background-color: $gray-173;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  border-radius: 2px;
+  width: fit-content;
+
+  .download__icon {
+    content: url('../assets/download_white.png');
+  }
 }
 
 .download__icon {
@@ -227,8 +251,18 @@ export default {
 }
 
 .linked__text,
-.download__icon {
-  margin-left: 6px;
+.download__text {
+  padding: 0 6px;
+}
+
+.linked__text:hover {
+  $li-color: #0078bd;
+
+  background-color: $li-color;
+  border-radius: 0 2px 2px 0;
+  color: $white;
+  font-weight: $font-weight-medium;
+  margin-left: -2px;
 }
 
 .langs {
@@ -258,5 +292,20 @@ export default {
 
 .lang__name {
   margin-left: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .section__profile {
+    order: -1;
+    margin-bottom: 24px;
+  }
+
+  .main__bar {
+    flex-direction: column;
+
+    .download__icon {
+      order: -1;
+    }
+  }
 }
 </style>
