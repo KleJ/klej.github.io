@@ -151,7 +151,7 @@ export default {
       ],
       education: {
         university: 'Samara State Technical University',
-        link: 'https://samgtu.ru/',
+        link: 'https://samgtu.com/',
         location: 'Samara',
         endDate: '2012',
         degree: 'Engineer\'s degree',
