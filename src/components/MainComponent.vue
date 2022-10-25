@@ -41,21 +41,49 @@
           </div>
         </div>
       </section>
+
+      <transition name="fade">
+        <section
+            v-if="colorSection">
+          <h2>Color component</h2>
+          <ColorComponent
+              @updateFooterColor="updateFooterColor"
+              :bgColor="footerColor">
+          </ColorComponent>
+        </section>
+      </transition>
     </div>
   </div>
-  <div class="footer">
-    <div class="footer__container">test p</div>
+  <div
+      :style="{'background-color': rgb}"
+      class="footer">
+    <div class="footer__container">
+      <a
+          class="footer__color-link"
+          @click="this.colorSection = !this.colorSection">Test color</a>
+    </div>
   </div>
 </template>
 
 <script>
-import EducationBlock from "./EducationBlock";
-import ExperienceBlock from "./ExperienceBlock";
-import ProfileBlock from "./ProfileBlock";
+import EducationBlock from "@/components/EducationBlock";
+import ExperienceBlock from "@/components/ExperienceBlock";
+import ProfileBlock from "@/components/ProfileBlock";
+import ColorComponent from "@/components/ColorComponent";
 
 export default {
   name: 'MainComponent',
-  components: {EducationBlock, ExperienceBlock, ProfileBlock},
+  components: {EducationBlock, ExperienceBlock, ProfileBlock, ColorComponent},
+  computed: {
+    rgb() {
+      return `rgb(${this.footerColor[0]}, ${this.footerColor[1]}, ${this.footerColor[2]})`;
+    }
+  },
+  methods: {
+    updateFooterColor(preset) {
+      this.footerColor = [...preset];
+    }
+  },
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -179,7 +207,9 @@ export default {
           icon: 'eng',
           level: 'Upper-Intermediate'
         }
-      ]
+      ],
+      colorSection: false,
+      footerColor: [119, 136, 153]
     };
   }
 };
@@ -308,6 +338,26 @@ export default {
     flex: 1;
     padding: 12px;
   }
+}
+
+.footer__color-link {
+  cursor: pointer;
+  color: $white;
+  text-decoration: underline;
+}
+
+.fade-enter-active {
+  transition: all 0.4s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.6s ease-in;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
 }
 
 @media screen and (max-width: 600px) {
