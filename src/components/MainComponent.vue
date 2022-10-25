@@ -209,7 +209,7 @@ export default {
         }
       ],
       colorSection: false,
-      footerColor: [119, 136, 153]
+      footerColor: [173, 185, 197]
     };
   }
 };
@@ -243,6 +243,10 @@ export default {
   padding: 40px 30px;
   border-radius: 6px;
   background: $white;
+
+  section h2 {
+    color: v-bind(rgb);
+  }
 }
 
 .main__bar {
