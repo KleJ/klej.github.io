@@ -47,5 +47,9 @@ export default {
 .sliders {
   display: flex;
   justify-content: space-around;
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 }
 </style>

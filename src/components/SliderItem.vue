@@ -69,6 +69,10 @@ export default {
   flex-direction: column;
   width: 100%;
   margin: 0 36px;
+
+  @media screen and (max-width: 768px) {
+    margin: 24px 12px;
+  }
 }
 
 .color__title {
