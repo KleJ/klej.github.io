@@ -5,7 +5,7 @@
       <div class="header__position">{{ position }}</div>
     </div>
     <div class="main">
-      <div class="main__bar">
+      <section class="main__bar">
         <a href="https://www.linkedin.com/in/iaruntcev/" class="linked">
           <span class="linked__icon"/>
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
@@ -14,7 +14,7 @@
           <span class="download__text">Download CV</span>
           <span class="download__icon"/>
         </a>
-      </div>
+      </section>
 
       <section class="section__profile">
         <h2>Profile</h2>
@@ -41,18 +41,49 @@
           </div>
         </div>
       </section>
+
+      <transition name="fade">
+        <section
+            v-if="isColorSectionVisible">
+          <h2>Color component</h2>
+          <ColorComponent
+              :bgColor="footerColor">
+          </ColorComponent>
+        </section>
+      </transition>
     </div>
   </div>
+  <FooterComponent
+      @toggleColorSection="this.isColorSectionVisible = !this.isColorSectionVisible"
+      :rgb="rgb">
+  </FooterComponent>
 </template>
 
 <script>
-import EducationBlock from "./EducationBlock";
-import ExperienceBlock from "./ExperienceBlock";
-import ProfileBlock from "./ProfileBlock";
+import emitter from "@/services/emitter";
+
+import EducationBlock from "@/components/EducationBlock";
+import ExperienceBlock from "@/components/ExperienceBlock";
+import ProfileBlock from "@/components/ProfileBlock";
+import ColorComponent from "@/components/ColorComponent";
+import FooterComponent from "@/components/FooterComponent";
 
 export default {
   name: 'MainComponent',
-  components: {EducationBlock, ExperienceBlock, ProfileBlock},
+  components: {FooterComponent, EducationBlock, ExperienceBlock, ProfileBlock, ColorComponent},
+  created() {
+    emitter.on("chgColor", this.updateFooterColor);
+  },
+  computed: {
+    rgb() {
+      return `rgb(${this.footerColor.red}, ${this.footerColor.green}, ${this.footerColor.blue})`;
+    }
+  },
+  methods: {
+    updateFooterColor({color, value}) {
+      this.footerColor[color] = value;
+    }
+  },
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -176,7 +207,9 @@ export default {
           icon: 'eng',
           level: 'Upper-Intermediate'
         }
-      ]
+      ],
+      isColorSectionVisible: false,
+      footerColor: {red: 173, green: 185, blue: 197}
     };
   }
 };
@@ -210,6 +243,10 @@ export default {
   padding: 40px 30px;
   border-radius: 6px;
   background: $white;
+
+  section h2 {
+    color: v-bind(rgb);
+  }
 }
 
 .main__bar {
@@ -231,7 +268,6 @@ export default {
   font-weight: $font-weight-medium;
   color: $white;
   background-color: $gray-173;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
   border-radius: 2px;
   width: fit-content;
 
@@ -243,6 +279,7 @@ export default {
 .download__icon {
   content: url('../assets/download.png');
   height: 24px;
+  padding-right: 2px;
 }
 
 .linked__icon {
@@ -292,6 +329,20 @@ export default {
 
 .lang__name {
   margin-left: 6px;
+}
+
+.fade-enter-active {
+  transition: all 0.4s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.6s ease-in;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
 }
 
 @media screen and (max-width: 600px) {
