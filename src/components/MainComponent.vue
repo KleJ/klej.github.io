@@ -268,7 +268,6 @@ export default {
   font-weight: $font-weight-medium;
   color: $white;
   background-color: $gray-173;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   width: fit-content;
 
@@ -280,6 +279,7 @@ export default {
 .download__icon {
   content: url('../assets/download.png');
   height: 24px;
+  padding-right: 2px;
 }
 
 .linked__icon {
