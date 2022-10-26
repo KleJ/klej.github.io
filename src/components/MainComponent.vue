@@ -5,7 +5,7 @@
       <div class="header__position">{{ position }}</div>
     </div>
     <div class="main">
-      <div class="main__bar">
+      <section class="main__bar">
         <a href="https://www.linkedin.com/in/iaruntcev/" class="linked">
           <span class="linked__icon"/>
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
@@ -14,7 +14,7 @@
           <span class="download__text">Download CV</span>
           <span class="download__icon"/>
         </a>
-      </div>
+      </section>
 
       <section class="section__profile">
         <h2>Profile</h2>
@@ -44,7 +44,7 @@
 
       <transition name="fade">
         <section
-            v-if="colorSection">
+            v-if="isColorSectionVisible">
           <h2>Color component</h2>
           <ColorComponent
               :bgColor="footerColor">
@@ -53,28 +53,24 @@
       </transition>
     </div>
   </div>
-  <div
-      :style="{'background-color': rgb}"
-      class="footer">
-    <div class="footer__container">
-      <a
-          class="footer__color-link"
-          @click="this.colorSection = !this.colorSection">Test color</a>
-    </div>
-  </div>
+  <FooterComponent
+      @toggleColorSection="this.isColorSectionVisible = !this.isColorSectionVisible"
+      :rgb="rgb">
+  </FooterComponent>
 </template>
 
 <script>
+import emitter from "@/services/emitter";
+
 import EducationBlock from "@/components/EducationBlock";
 import ExperienceBlock from "@/components/ExperienceBlock";
 import ProfileBlock from "@/components/ProfileBlock";
 import ColorComponent from "@/components/ColorComponent";
-
-import emitter from "@/services/emitter";
+import FooterComponent from "@/components/FooterComponent";
 
 export default {
   name: 'MainComponent',
-  components: {EducationBlock, ExperienceBlock, ProfileBlock, ColorComponent},
+  components: {FooterComponent, EducationBlock, ExperienceBlock, ProfileBlock, ColorComponent},
   created() {
     emitter.on("chgColor", this.updateFooterColor);
   },
@@ -212,7 +208,7 @@ export default {
           level: 'Upper-Intermediate'
         }
       ],
-      colorSection: false,
+      isColorSectionVisible: false,
       footerColor: {red: 173, green: 185, blue: 197}
     };
   }
@@ -333,25 +329,6 @@ export default {
 
 .lang__name {
   margin-left: 6px;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: lightslategray;
-  height: 240px;
-
-  .footer__container {
-    max-width: $container-width;
-    flex: 1;
-    padding: 12px;
-  }
-}
-
-.footer__color-link {
-  cursor: pointer;
-  color: $white;
-  text-decoration: underline;
 }
 
 .fade-enter-active {
