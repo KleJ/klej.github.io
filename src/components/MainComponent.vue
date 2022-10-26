@@ -208,7 +208,7 @@ export default {
           level: 'Upper-Intermediate'
         }
       ],
-      isColorSectionVisible: true,
+      isColorSectionVisible: false,
       footerColor: {red: 173, green: 185, blue: 197}
     };
   }

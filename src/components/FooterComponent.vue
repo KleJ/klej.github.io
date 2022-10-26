@@ -31,7 +31,7 @@
       <div class="footer__block footer__block--right">
         <div class="footer__item">
           <a
-              title="Click once again to hide it up"
+              title="Click to show or hide color sliders"
               class="footer__item-link"
               @click="$emit('toggleColorSection')">
             <span class="footer__item--text">change color</span>
