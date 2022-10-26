@@ -1,8 +1,6 @@
 <template>
   <div class="color__container">
-    <h3
-        class="color__title"
-        :style="{'color': rgb}">
+    <h3 class="color__title">
       {{ colorType }}
     </h3>
     <input
@@ -12,20 +10,21 @@
         type="range"
         :id="colorType"
         :name="colorType"
-        :value="this.preset[colorType]"
+        :value="presetVal"
         min="0"
         max="255">
   </div>
 </template>
 
 <script>
+import emitter from "@/services/emitter";
+
 export default {
   name: 'SliderItem',
   props: {
     colorType: String,
     presetVal: Number
   },
-  emits: ['updateColor'],
   data() {
     return {
       preset: {
@@ -39,23 +38,15 @@ export default {
     this.preset[this.colorType] = this.presetVal;
   },
   computed: {
-    red() {
-      return this.preset.red;
-    },
-    green() {
-      return this.preset.green;
-    },
-    blue() {
-      return this.preset.blue;
-    },
     rgb() {
-      return `rgb(${this.red}, ${this.green}, ${this.blue})`;
+      return `rgb(${this.preset.red}, ${this.preset.green}, ${this.preset.blue})`;
     }
   },
   methods: {
-    changeColor(newVal) {
-      this.preset[this.colorType] = newVal.target.value;
-      this.$emit('updateColor', newVal.target.value);
+    changeColor(event) {
+      const value = +(event.target.value);
+      this.preset[this.colorType] = value;
+      emitter.emit("chgColor", { color: this.colorType, value });
     }
   }
 }
@@ -79,6 +70,7 @@ export default {
   text-align: center;
   font-weight: $font-weight-bold;
   font-size: $larger-font-size;
+  color: v-bind(rgb);
 }
 
 .slider {

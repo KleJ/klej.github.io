@@ -47,7 +47,6 @@
             v-if="colorSection">
           <h2>Color component</h2>
           <ColorComponent
-              @updateFooterColor="updateFooterColor"
               :bgColor="footerColor">
           </ColorComponent>
         </section>
@@ -71,17 +70,22 @@ import ExperienceBlock from "@/components/ExperienceBlock";
 import ProfileBlock from "@/components/ProfileBlock";
 import ColorComponent from "@/components/ColorComponent";
 
+import emitter from "@/services/emitter";
+
 export default {
   name: 'MainComponent',
   components: {EducationBlock, ExperienceBlock, ProfileBlock, ColorComponent},
+  created() {
+    emitter.on("chgColor", this.updateFooterColor);
+  },
   computed: {
     rgb() {
-      return `rgb(${this.footerColor[0]}, ${this.footerColor[1]}, ${this.footerColor[2]})`;
+      return `rgb(${this.footerColor.red}, ${this.footerColor.green}, ${this.footerColor.blue})`;
     }
   },
   methods: {
-    updateFooterColor(preset) {
-      this.footerColor = [...preset];
+    updateFooterColor({color, value}) {
+      this.footerColor[color] = value;
     }
   },
   data() {
@@ -209,7 +213,7 @@ export default {
         }
       ],
       colorSection: false,
-      footerColor: [173, 185, 197]
+      footerColor: {red: 173, green: 185, blue: 197}
     };
   }
 };

@@ -2,18 +2,15 @@
   <div class="sliders">
     <SliderItem
         colorType="red"
-        @updateColor="updateColor($event,0)"
-        :presetVal="defaultPreset[0]">
+        :presetVal="bgColor.red">
     </SliderItem>
     <SliderItem
         colorType="green"
-        @updateColor="updateColor($event,1)"
-        :presetVal="defaultPreset[1]">
+        :presetVal="bgColor.green">
     </SliderItem>
     <SliderItem
         colorType="blue"
-        @updateColor="updateColor($event,2)"
-        :presetVal="defaultPreset[2]">
+        :presetVal="bgColor.blue">
     </SliderItem>
   </div>
 </template>
@@ -24,21 +21,12 @@ import SliderItem from "@/components/SliderItem";
 export default {
   name: "ColorComponent.vue",
   components: {SliderItem},
-  props: ['bgColor'],
-  emits: ['updateFooterColor'],
-  created() {
-    this.defaultPreset = [...this.bgColor];
-  },
-  methods: {
-    updateColor(newVal, index) {
-      this.defaultPreset[index] = newVal;
-      this.$emit('updateFooterColor', this.defaultPreset);
+  props: {
+    bgColor: {
+      red: Number,
+      green: Number,
+      blue: Number
     }
-  },
-  data() {
-    return {
-      defaultPreset: [119, 136, 153]
-    };
   }
 }
 </script>
