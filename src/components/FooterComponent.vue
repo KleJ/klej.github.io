@@ -79,6 +79,10 @@ export default {
 
 .footer__item {
   margin: 24px 0;
+
+  &:hover .footer_item--icon{
+    scale: 1.2;
+  }
 }
 
 .footer__item-link {
@@ -100,6 +104,7 @@ export default {
   height: 24px;
   width: 24px;
   vertical-align: middle;
+  transition: .5s ease-in-out;
 
   &.icon-cv {
     content: url('../assets/icons/download-circled.png');
