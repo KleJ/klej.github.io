@@ -101,5 +101,12 @@ export default {
   font-size: 14px;
   line-height: 18px;
   color: $white;
+  transition: all .5s ease-in-out;
+  box-shadow:  0 0 2px rgba(0,0,0,0.3);
+
+  &:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
 }
 </style>
