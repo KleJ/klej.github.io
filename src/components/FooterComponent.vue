@@ -27,6 +27,14 @@
             <span class="footer__item--text">download CV</span>
           </a>
         </div>
+        <div class="footer__item">
+          <a
+              class="footer__item-link"
+              href="https://github.com/KleJ">
+            <span class="footer_item--icon icon-github"/>
+            <span class="footer__item--text">github.com/KleJ</span>
+          </a>
+        </div>
       </div>
       <div class="footer__block footer__block--right">
         <div class="footer__item">
@@ -120,6 +128,10 @@ export default {
 
   &.icon-paint {
     content: url('../assets/icons/paint-roller.png');
+  }
+
+  &.icon-github {
+    content: url('../assets/icons/github.png');
   }
 }
 
