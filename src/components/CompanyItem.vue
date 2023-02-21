@@ -52,23 +52,23 @@ export default {
   }
 
   .tsys {
-    content: url('../assets/companies/tsys.png');
+    content: url('~@/assets/companies/tsys.png');
   }
 
   .epam {
-    content: url('../assets/companies/epam.png');
+    content: url('~@/assets/companies/epam.png');
   }
 
   .nexign {
-    content: url('../assets/companies/nexign.png');
+    content: url('~@/assets/companies/nexign.png');
   }
 
   .smart {
-    content: url('../assets/companies/smart.png');
+    content: url('~@/assets/companies/smart.png');
   }
 
   .zavod {
-    content: url('../assets/companies/zavod.png');
+    content: url('~@/assets/companies/zavod.png');
   }
 }
 </style>

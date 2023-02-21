@@ -115,23 +115,23 @@ export default {
   transition: .5s ease-in-out;
 
   &.icon-cv {
-    content: url('../assets/icons/download-circled.png');
+    content: url('~@/assets/icons/download-circled.png');
   }
 
   &.icon-mail {
-    content: url('../assets/icons/mail-circled.png');
+    content: url('~@/assets/icons/mail-circled.png');
   }
 
   &.icon-linkedin {
-    content: url('../assets/icons/linkedin-circled.png');
+    content: url('~@/assets/icons/linkedin-circled.png');
   }
 
   &.icon-paint {
-    content: url('../assets/icons/paint-roller.png');
+    content: url('~@/assets/icons/paint-roller.png');
   }
 
   &.icon-github {
-    content: url('../assets/icons/github.png');
+    content: url('~@/assets/icons/github.png');
   }
 }
 

@@ -272,18 +272,18 @@ export default {
   width: fit-content;
 
   .download__icon {
-    content: url('../assets/download_white.png');
+    content: url('~@/assets/download_white.png');
   }
 }
 
 .download__icon {
-  content: url('../assets/download.png');
+  content: url('~@/assets/download.png');
   height: 24px;
   padding-right: 2px;
 }
 
 .linked__icon {
-  content: url('../assets/in.png');
+  content: url('~@/assets/in.png');
   height: 24px;
 }
 
@@ -319,11 +319,11 @@ export default {
   height: 24px;
 
   &.rus {
-    content: url('../assets/rus.png');
+    content: url('~@/assets/rus.png');
   }
 
   &.eng {
-    content: url('../assets/eng.png');
+    content: url('~@/assets/eng.png');
   }
 }
 

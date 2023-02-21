@@ -25,7 +25,7 @@ export default {
   content: '';
   height: $background-height;
   width: 100%;
-  background-image: url("./assets/karelia.jpg");
+  background-image: url('~@/assets/karelia.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
