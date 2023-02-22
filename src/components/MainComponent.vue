@@ -18,7 +18,7 @@
 
       <section class="section__profile">
         <h2>Profile</h2>
-        <ProfileBlock/>
+        <ProfileBlock :descriptions="profile"/>
       </section>
 
       <section>

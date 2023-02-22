@@ -1,6 +1,12 @@
 {
   "author": "Mikhail Iaruntcev",
   "position": "Senior Software Engineer",
+  "profile": [
+    "Qualified Front-End Developer with 10+ years of hands-on experience in commercial software development",
+    "Vast experience with modern frameworks (Vue.js, Angular), module bundlers, version control systems, and excellent JavaScript knowledge",
+    "Passionate about software development and striving for a quality start from project configuration to the code review process",
+    "Great team player with excellent communication skills"
+  ],
   "workLog": [
     {
       "title": "Senior Frontend Developer",
@@ -10,8 +16,8 @@
         "type": "tsys"
       },
       "location": "Saint Petersburg",
-      "startDate": "September 2022",
-      "endDate": "Present",
+      "startDate": "May 2018",
+      "endDate": "September 2022",
       "desc": [
         "Working on the project in IoT area",
         "Developed a data marketplace portal completely from scratch. Close collaboration with design team",
