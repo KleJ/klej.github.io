@@ -18,7 +18,7 @@
         v-if="isWarningVisible"
         class="warning">
       <span class="warning__icon"/>
-      <span class="warning__text"> White color isn't recommended</span>
+      <span class="warning__text">White color is not recommended</span>
       <span class="warning__icon"/>
     </div>
   </transition>
