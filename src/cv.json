@@ -50,7 +50,7 @@
       "desc": [
         "Developed a base framework, to be used for other company projects",
         "Created the analytics widget based on D3.js and Sankey chart",
-        "Improved code quality and optimized performance. Applied TDD"
+        "Improved code quality and optimized performance"
       ],
       "stack": [
         "Angular.js",
