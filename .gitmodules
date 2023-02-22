@@ -1,4 +1,0 @@
-[submodule "dist"]
-	path = dist
-	url = git@github.com:KleJ/klej.github.io.git
-	branch = gh-pages
