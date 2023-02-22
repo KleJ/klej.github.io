@@ -39,7 +39,7 @@ export default {
 .location__country {
   position: relative;
   height: 18px;
-  content: url('../assets/rus.png');
+  content: url('~@/assets/rus.png');
 }
 
 .degree {

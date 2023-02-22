@@ -11,16 +11,7 @@
 <script>
 export default {
   name: 'ProfileBlock',
-  data() {
-    return {
-      descriptions: [
-          'Qualified Front-End Developer with 10+ years of hands-on experience in commercial software development',
-          'Vast experience with modern frameworks (Vue.js, Angular), module bundlers, version control systems, and excellent JavaScript knowledge',
-          'Passionate about software development and striving for a quality start from project configuration to the code review process',
-          'Great team player with excellent communication skills'
-      ]
-    };
-  }
+  props: ['descriptions']
 };
 </script>
 

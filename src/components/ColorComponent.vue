@@ -18,7 +18,7 @@
         v-if="isWarningVisible"
         class="warning">
       <span class="warning__icon"/>
-      <span class="warning__text"> White color isn't recommended</span>
+      <span class="warning__text">White color is not recommended</span>
       <span class="warning__icon"/>
     </div>
   </transition>
@@ -70,7 +70,7 @@ export default {
   height: 24px;
   width: 24px;
   vertical-align: middle;
-  content: url('../assets/icons/box-important.png');
+  content: url('~@/assets/icons/box-important.png');
 }
 
 .fade-enter-active,

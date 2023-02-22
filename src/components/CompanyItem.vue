@@ -6,7 +6,10 @@
     <a
         :href="company.link"
         class="company__logo">
-      <img class="company__logo--img" :class="company.type" :alt="company.name"/>
+      <img
+          class="company__logo--img"
+          :src="imagePath"
+          :alt="company.name"/>
     </a>
   </div>
 </template>
@@ -14,7 +17,12 @@
 <script>
 export default {
   name: 'CompanyItem',
-  props: ['company']
+  props: ['company'],
+  computed: {
+    imagePath() {
+      return require('@/assets/companies/' + this.company.type + '.png');
+    }
+  }
 };
 </script>
 
@@ -49,26 +57,6 @@ export default {
     &:hover {
       max-height: 28px;
     }
-  }
-
-  .tsys {
-    content: url('../assets/companies/tsys.png');
-  }
-
-  .epam {
-    content: url('../assets/companies/epam.png');
-  }
-
-  .nexign {
-    content: url('../assets/companies/nexign.png');
-  }
-
-  .smart {
-    content: url('../assets/companies/smart.png');
-  }
-
-  .zavod {
-    content: url('../assets/companies/zavod.png');
   }
 }
 </style>

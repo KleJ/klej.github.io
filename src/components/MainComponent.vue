@@ -18,7 +18,7 @@
 
       <section class="section__profile">
         <h2>Profile</h2>
-        <ProfileBlock/>
+        <ProfileBlock :descriptions="profile"/>
       </section>
 
       <section>
@@ -61,6 +61,7 @@
 
 <script>
 import emitter from "@/services/emitter";
+import cvJson from "@/cv.json";
 
 import EducationBlock from "@/components/EducationBlock";
 import ExperienceBlock from "@/components/ExperienceBlock";
@@ -87,129 +88,9 @@ export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      author: 'Mikhail Iaruntcev',
-      position: 'Senior Software Engineer',
-      workLog: [
-        {
-          title: 'Principal Frontend Developer',
-          company: {
-            name: 'T-Systems',
-            link: 'https://www.t-systems.com/',
-            type: 'tsys'
-          },
-          location: 'Saint Petersburg',
-          startDate: 'May 2018',
-          endDate: 'Present',
-          desc: [
-            'Working on the project in IoT area',
-            'Developed a data marketplace portal completely from scratch. Close collaboration with design team',
-            'Created a component base for new projects',
-            'Building the application for tracking system based on Cumulocity IoT'
-          ],
-          stack: ['Vue.js', 'Angular', 'Angular Material', 'TypeScript', 'RxJs', 'Webpack', 'Sass', 'Leaflet', 'Keycloack.js', 'ESLint/Prettier', 'Git', 'Cumulocity']
-        },
-        {
-          title: 'Senior Frontend Developer',
-          company: {
-            name: 'EPAM Systems',
-            link: 'https://www.epam.com/',
-            type: 'epam',
-          },
-          location: 'Saint Petersburg',
-          startDate: 'June 2016',
-          endDate: 'April 2018',
-          desc: [
-            'Developed a base framework, to be used for other company projects',
-            'Created the analytics widget based on D3.js and Sankey chart',
-            'Improved code quality and optimized performance. Applied TDD'
-          ],
-          stack: [
-            'Angular.js', 'Angular', 'Webpack', 'Typescript', 'D3.js', 'Sankey', 'Sass', 'Git', 'Electron.js'
-          ]
-        },
-        {
-          title: 'Frontend Developer',
-          company: {
-            name: 'Nexign',
-            link: 'https://nexign.com/',
-            type: 'nexign',
-          },
-          location: 'Samara',
-          startDate: 'November 2015',
-          endDate: 'February 2016',
-          desc: [
-            'Development of new version of the system for automated processing of sales operations (SFA)',
-            'Contributed to solution design for the new version of SFA system',
-            'Applied Test-Driven Development approach',
-            'Migrated existing modules to the Angular framework'
-          ],
-          stack: [
-            'Angular.js', 'Webpack', 'Typescript', 'Sass', 'Git'
-          ]
-        },
-        {
-          title: 'Frontend Developer',
-          company: {
-            name: 'Smart Solutions',
-            link: 'http://smartsolutions-123.ru/',
-            type: 'smart',
-          },
-          location: 'Samara',
-          startDate: 'March 2015',
-          endDate: 'November 2015',
-          project: 'International project ARUM, adaptive production management',
-          desc: [
-            'Infographic visualisation by D3.js. Integration of voting system',
-            'Developed UI interacting with Restful API for multi-agent scheduler',
-            'Created UI/UX for task distribution system for production management'
-          ],
-          stack: [
-            'Angular.js', 'Webpack', 'D3.js', 'Sass/Less', 'Git'
-          ]
-        },
-        {
-          title: 'Full Stack Developer',
-          company: {
-            name: 'WebZavod',
-            link: 'https://webzavod.ru/',
-            type: 'zavod',
-          },
-          location: 'Samara',
-          startDate: 'January 2011',
-          endDate: 'January 2014',
-          desc: [
-            'Developed and maintained various CMS modules',
-            'Designed DB architecture for sites and regional portals of corporate customers',
-            'Developed bash and perl scripts for process automation',
-            'Integrated third-party modules'
-          ],
-          stack: [
-            'Perl', 'JavaScript', 'jQuery', 'MySQL', 'RegEx', 'Bash'
-          ]
-        }
-      ],
-      education: {
-        university: 'Samara State Technical University',
-        link: 'https://samgtu.com/',
-        location: 'Samara',
-        endDate: '2012',
-        degree: 'Engineer\'s degree',
-        area: 'Computer and Information Systems Security'
-      },
-      languages: [
-        {
-          lang: 'Russian',
-          icon: 'rus',
-          level: 'Native'
-        },
-        {
-          lang: 'English',
-          icon: 'eng',
-          level: 'Upper-Intermediate'
-        }
-      ],
       isColorSectionVisible: false,
-      footerColor: {red: 173, green: 185, blue: 197}
+      footerColor: {red: 173, green: 185, blue: 197},
+      ...cvJson
     };
   }
 };
@@ -272,18 +153,18 @@ export default {
   width: fit-content;
 
   .download__icon {
-    content: url('../assets/download_white.png');
+    content: url('~@/assets/download_white.png');
   }
 }
 
 .download__icon {
-  content: url('../assets/download.png');
+  content: url('~@/assets/download.png');
   height: 24px;
   padding-right: 2px;
 }
 
 .linked__icon {
-  content: url('../assets/in.png');
+  content: url('~@/assets/in.png');
   height: 24px;
 }
 
@@ -319,11 +200,11 @@ export default {
   height: 24px;
 
   &.rus {
-    content: url('../assets/rus.png');
+    content: url('~@/assets/rus.png');
   }
 
   &.eng {
-    content: url('../assets/eng.png');
+    content: url('~@/assets/eng.png');
   }
 }
 
