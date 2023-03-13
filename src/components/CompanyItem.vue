@@ -5,6 +5,7 @@
     </span>
     <a
         :href="company.link"
+        target="_blank"
         class="company__logo">
       <img
           class="company__logo--img"
@@ -53,10 +54,18 @@ export default {
     max-height: 22px;
     vertical-align: middle;
     transition: 1s;
+  }
+}
 
-    &:hover {
-      max-height: 28px;
-    }
+@media screen and (max-width: 600px) {
+  .company {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .company__logo--img:hover {
+    transform: scale(1.3) translateX(10px);
   }
 }
 </style>
