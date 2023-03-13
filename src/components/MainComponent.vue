@@ -6,34 +6,40 @@
     </div>
     <div class="main">
       <section class="main__bar">
-        <a href="https://www.linkedin.com/in/iaruntcev/" class="linked">
+        <a
+            href="https://www.linkedin.com/in/iaruntcev/"
+            target="_blank"
+            class="linked">
           <span class="linked__icon"/>
           <span class="linked__text">Linkedin.com/in/iaruntcev</span>
         </a>
-        <a :href="`${publicPath}mike_cv.pdf`" class="download" download>
+        <a
+            class="download"
+            :href="`${publicPath}mike_cv.pdf`"
+            download>
           <span class="download__text">Download CV</span>
           <span class="download__icon"/>
         </a>
       </section>
 
       <section class="section__profile">
-        <h2>Profile</h2>
+        <h2 class="section-title">Profile</h2>
         <ProfileBlock :descriptions="profile"/>
       </section>
 
       <section>
-        <h2>Experience</h2>
+        <h2 class="section-title">Experience</h2>
         <ExperienceBlock
             v-for="(work, index) in workLog" :data="work" :key="index"/>
       </section>
 
       <section>
-        <h2>Education</h2>
+        <h2 class="section-title">Education</h2>
         <EducationBlock :data="education"/>
       </section>
 
       <section>
-        <h2>Languages</h2>
+        <h2 class="section-title">Languages</h2>
         <div class="langs">
           <div v-for="(lang, index) in languages" :key="index" class="lang">
             <span class="lang__icon" :class="lang.icon"/>
@@ -99,6 +105,8 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/variables";
 
+$li-color: #0078bd;
+
 .header {
   margin: 36px 0 130px;
   text-shadow: 1px 1px 2px $white
@@ -125,7 +133,7 @@ export default {
   border-radius: 6px;
   background: $white;
 
-  section h2 {
+  .section-title {
     color: v-bind(rgb);
   }
 }
@@ -145,18 +153,6 @@ export default {
   margin: 6px 0;
 }
 
-.download:hover {
-  font-weight: $font-weight-medium;
-  color: $white;
-  background-color: $gray-173;
-  border-radius: 2px;
-  width: fit-content;
-
-  .download__icon {
-    content: url('~@/assets/download_white.png');
-  }
-}
-
 .download__icon {
   content: url('~@/assets/download.png');
   height: 24px;
@@ -171,16 +167,6 @@ export default {
 .linked__text,
 .download__text {
   padding: 0 6px;
-}
-
-.linked__text:hover {
-  $li-color: #0078bd;
-
-  background-color: $li-color;
-  border-radius: 0 2px 2px 0;
-  color: $white;
-  font-weight: $font-weight-medium;
-  margin-left: -2px;
 }
 
 .langs {
@@ -227,6 +213,25 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
+  .section-title {
+    text-align: center;
+  }
+
+  .linked,
+  .download {
+    padding: 6px;
+    justify-content: center;
+    border-radius: 6px;
+  }
+
+  .linked {
+    border: 2px solid $li-color;
+  }
+
+  .download {
+    border: 2px solid $gray-173;
+  }
+
   .section__profile {
     order: -1;
     margin-bottom: 24px;
@@ -234,10 +239,32 @@ export default {
 
   .main__bar {
     flex-direction: column;
+    justify-content: center;
 
     .download__icon {
       order: -1;
     }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .download:hover {
+    font-weight: $font-weight-medium;
+    color: $white;
+    background-color: $gray-173;
+    border-radius: 2px;
+
+    .download__icon {
+      content: url('~@/assets/download_white.png');
+    }
+  }
+
+  .linked__text:hover {
+    background-color: $li-color;
+    border-radius: 0 2px 2px 0;
+    color: $white;
+    font-weight: $font-weight-medium;
+    margin-left: -2px;
   }
 }
 </style>
