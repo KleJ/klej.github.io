@@ -6,7 +6,7 @@
           <a
               class="footer__item-link"
               href="https://www.linkedin.com/in/iaruntcev/">
-            <span class="footer_item--icon icon-linkedin"/>
+            <span class="footer__item--icon icon-linkedin"/>
             <span class="footer__item--text">linkedin.com/in/iaruntcev</span>
           </a>
         </div>
@@ -14,7 +14,7 @@
           <a
               class="footer__item-link"
               href="mailto:yaruntsev@gmail.com">
-            <span class="footer_item--icon icon-mail"/>
+            <span class="footer__item--icon icon-mail"/>
             <span class="footer__item--text">yaruntsev@gmail.com</span>
           </a>
         </div>
@@ -23,7 +23,7 @@
               class="footer__item-link"
               :href="`${publicPath}mike_cv.pdf`"
               download>
-            <span class="footer_item--icon icon-cv"/>
+            <span class="footer__item--icon icon-cv"/>
             <span class="footer__item--text">download CV</span>
           </a>
         </div>
@@ -31,7 +31,7 @@
           <a
               class="footer__item-link"
               href="https://github.com/KleJ">
-            <span class="footer_item--icon icon-github"/>
+            <span class="footer__item--icon icon-github"/>
             <span class="footer__item--text">github.com/KleJ</span>
           </a>
         </div>
@@ -43,7 +43,7 @@
               class="footer__item-link"
               @click="$emit('toggleColorSection')">
             <span class="footer__item--text">change color</span>
-            <span class="footer_item--icon icon-paint"/>
+            <span class="footer__item--icon icon-paint"/>
           </a>
         </div>
       </div>
@@ -88,15 +88,16 @@ export default {
 .footer__item {
   margin: 24px 0;
 
-  &:hover .footer_item--icon{
+  &:hover .footer__item--icon {
     scale: 1.2;
   }
 }
 
 .footer__item-link {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   color: $white;
-  align-items: center;
   text-decoration: none;
 
   &:hover {
@@ -108,10 +109,9 @@ export default {
   }
 }
 
-.footer_item--icon {
+.footer__item--icon {
   height: 24px;
   width: 24px;
-  vertical-align: middle;
   transition: .5s ease-in-out;
 
   &.icon-cv {
@@ -144,10 +144,14 @@ export default {
     flex-direction: column;
   }
 
-  .footer__block--right .footer__item-link {
-    display: flex;
+  .footer__item-link {
+    justify-content: center;
+  }
 
-    .footer_item--icon {
+  .footer__block--right .footer__item {
+    margin-top: 0;
+
+    .footer__item-link .footer__item--icon {
       order: -1;
     }
   }
