@@ -5,6 +5,15 @@
         <div class="footer__item">
           <a
               class="footer__item-link"
+              :href="`${publicPath}mike_cv.pdf`"
+              download>
+            <span class="footer__item--icon icon-cv"/>
+            <span class="footer__item--text">download CV</span>
+          </a>
+        </div>
+        <div class="footer__item">
+          <a
+              class="footer__item-link"
               href="https://www.linkedin.com/in/iaruntcev/">
             <span class="footer__item--icon icon-linkedin"/>
             <span class="footer__item--text">linkedin.com/in/iaruntcev</span>
@@ -16,15 +25,6 @@
               href="mailto:yaruntsev@gmail.com">
             <span class="footer__item--icon icon-mail"/>
             <span class="footer__item--text">yaruntsev@gmail.com</span>
-          </a>
-        </div>
-        <div class="footer__item">
-          <a
-              class="footer__item-link"
-              :href="`${publicPath}mike_cv.pdf`"
-              download>
-            <span class="footer__item--icon icon-cv"/>
-            <span class="footer__item--text">download CV</span>
           </a>
         </div>
         <div class="footer__item">
