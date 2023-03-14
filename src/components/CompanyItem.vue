@@ -4,24 +4,22 @@
       {{ company.name }}
     </span>
     <a
+        ref="link"
+        class="company__link"
         :href="company.link"
-        target="_blank"
-        class="company__logo">
+        target="_blank">
       <img
-          ref="image"
-          class="company__logo--img"
+          class="company__logo"
           :src="imagePath"
           :alt="company.name"/>
-      <svg :width="width" height="32" xmlns="http://www.w3.org/2000/svg">
-        <rect x='0' y='0' fill='none' :width="width" height='32'/>
+      <svg :width="width+10" height="44" xmlns="http://www.w3.org/2000/svg">
+        <rect x='5' y='5' rx="5" fill='none' :width="width" height='34'/>
       </svg>
     </a>
   </div>
 </template>
 
 <script>
-const FRAME = 10;
-
 export default {
   name: 'CompanyItem',
   props: ['company'],
@@ -37,7 +35,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.width = this.$refs.image.clientWidth + FRAME;
+      this.width = this.$refs.link.clientWidth;
     }, 100);
   }
 };
@@ -48,13 +46,27 @@ export default {
 
 .company {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
-  line-height: 22px;
+}
 
-  a {
-    position: relative;
+.company__name {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: $blue-2;
+  color: $white;
+  font-weight: $font-weight-bold;
+}
+
+.company__link {
+  margin-left: 12px;
+  transition: 1s;
+  position: relative;
+  padding: 4px 6px;
+
+  .company__logo {
+    max-height: 22px;
+    vertical-align: middle;
   }
 }
 
@@ -69,25 +81,6 @@ svg rect {
   stroke-dasharray: 0 500;
 }
 
-.company__name {
-  padding: 5px 10px;
-  border-radius: 8px;
-  background: $blue-2;
-  color: $white;
-  font-weight: $font-weight-bold;
-}
-
-.company__logo {
-  margin-left: 14px;
-  height: 22px;
-  transition: 1s;
-
-  .company__logo--img {
-    max-height: 22px;
-    vertical-align: middle;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .company {
     justify-content: space-between;
@@ -95,12 +88,13 @@ svg rect {
 }
 
 @media screen and (min-width: 600px) {
-  .company__logo:hover {
+  .company__link:hover {
     transform: scale(1.3) translateX(15px);
+    cursor: pointer;
 
     svg rect {
       stroke: $blue-2;
-      stroke-width: 3;
+      stroke-width: 2;
       stroke-dasharray: 500 0;
     }
   }
