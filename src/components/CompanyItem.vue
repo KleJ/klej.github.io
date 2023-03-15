@@ -12,30 +12,40 @@
           class="company__logo"
           :src="imagePath"
           :alt="company.name"/>
-      <svg :width="width+10" height="44" xmlns="http://www.w3.org/2000/svg">
-        <rect x='5' y='5' rx="5" fill='none' :width="width" height='34'/>
+      <svg :width="svgWidth" :height="svgHeight" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" rx="5" fill="none" :width="rectWidth" :height="rectHeight"/>
       </svg>
     </a>
   </div>
 </template>
 
 <script>
+const EXTENDED = 10;
+
 export default {
-  name: 'CompanyItem',
-  props: ['company'],
+  name: "CompanyItem",
+  props: ["company"],
   computed: {
     imagePath() {
-      return require('@/assets/companies/' + this.company.type + '.png');
+      return require("@/assets/companies/" + this.company.type + ".png");
+    },
+    svgWidth() {
+      return this.rectWidth + EXTENDED;
+    },
+    svgHeight() {
+      return this.rectHeight + EXTENDED;
     }
   },
   data() {
     return {
-      width: 0
+      rectWidth: 0,
+      rectHeight: 0
     }
   },
   mounted() {
     setTimeout(() => {
-      this.width = this.$refs.link.clientWidth;
+      this.rectWidth = this.$refs.link.clientWidth;
+      this.rectHeight = this.$refs.link.clientHeight;
     }, 100);
   }
 };
