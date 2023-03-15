@@ -4,24 +4,49 @@
       {{ company.name }}
     </span>
     <a
+        ref="link"
+        class="company__link"
         :href="company.link"
-        class="company__logo">
+        target="_blank">
       <img
-          class="company__logo--img"
+          class="company__logo"
           :src="imagePath"
           :alt="company.name"/>
+      <svg :width="svgWidth" :height="svgHeight" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" rx="5" fill="none" :width="rectWidth" :height="rectHeight"/>
+      </svg>
     </a>
   </div>
 </template>
 
 <script>
+const EXTENDED = 10;
+
 export default {
-  name: 'CompanyItem',
-  props: ['company'],
+  name: "CompanyItem",
+  props: ["company"],
   computed: {
     imagePath() {
-      return require('@/assets/companies/' + this.company.type + '.png');
+      return require("@/assets/companies/" + this.company.type + ".png");
+    },
+    svgWidth() {
+      return this.rectWidth + EXTENDED;
+    },
+    svgHeight() {
+      return this.rectHeight + EXTENDED;
     }
+  },
+  data() {
+    return {
+      rectWidth: 0,
+      rectHeight: 0
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.rectWidth = this.$refs.link.clientWidth;
+      this.rectHeight = this.$refs.link.clientHeight;
+    }, 100);
   }
 };
 </script>
@@ -31,10 +56,8 @@ export default {
 
 .company {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
-  line-height: 22px;
 }
 
 .company__name {
@@ -45,17 +68,44 @@ export default {
   font-weight: $font-weight-bold;
 }
 
-.company__logo {
-  margin-left: 14px;
-  height: 22px;
+.company__link {
+  margin-left: 12px;
+  transition: 1s;
+  position: relative;
+  padding: 4px 6px;
 
-  .company__logo--img {
+  .company__logo {
     max-height: 22px;
     vertical-align: middle;
-    transition: 1s;
+  }
+}
 
-    &:hover {
-      max-height: 28px;
+svg {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+svg rect {
+  transition: all 0.8s ease-in-out;
+  stroke-dasharray: 0 500;
+}
+
+@media screen and (max-width: 600px) {
+  .company {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .company__link:hover {
+    transform: scale(1.3) translateX(15px);
+    cursor: pointer;
+
+    svg rect {
+      stroke: $blue-2;
+      stroke-width: 2;
+      stroke-dasharray: 500 0;
     }
   }
 }

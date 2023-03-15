@@ -11,7 +11,7 @@
     {
       "title": "Senior Frontend Developer",
       "company": {
-        "name": "T-Systems",
+        "name": "Deutsche Telekom",
         "link": "https://www.t-systems.com/",
         "type": "tsys"
       },
@@ -155,7 +155,7 @@
     {
       "lang": "English",
       "icon": "eng",
-      "level": "Upper-Intermediate"
+      "level": "Full professional proficiency"
     }
   ]
 }
