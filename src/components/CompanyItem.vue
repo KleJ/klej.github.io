@@ -46,7 +46,7 @@ export default {
     setTimeout(() => {
       this.rectWidth = this.$refs.link.clientWidth;
       this.rectHeight = this.$refs.link.clientHeight;
-    }, 100);
+    }, 500);
   }
 };
 </script>
