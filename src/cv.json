@@ -67,37 +67,13 @@
     {
       "title": "Frontend Developer",
       "company": {
-        "name": "Nexign",
-        "link": "https://nexign.com/",
-        "type": "nexign"
-      },
-      "location": "Samara",
-      "startDate": "November 2015",
-      "endDate": "February 2016",
-      "desc": [
-        "Development of new version of the system for automated processing of sales operations (SFA)",
-        "Contributed to solution design for the new version of SFA system",
-        "Applied Test-Driven Development approach",
-        "Migrated existing modules to the Angular framework"
-      ],
-      "stack": [
-        "Angular.js",
-        "Webpack",
-        "Typescript",
-        "Sass",
-        "Git"
-      ]
-    },
-    {
-      "title": "Frontend Developer",
-      "company": {
         "name": "Smart Solutions",
         "link": "http://smartsolutions-123.ru/",
         "type": "smart"
       },
       "location": "Samara",
       "startDate": "March 2015",
-      "endDate": "November 2015",
+      "endDate": "February 2016",
       "project": "International project ARUM, adaptive production management",
       "desc": [
         "Infographic visualisation by D3.js. Integration of voting system",
@@ -106,6 +82,7 @@
       ],
       "stack": [
         "Angular.js",
+        "Typescript",
         "Webpack",
         "D3.js",
         "Sass/Less",
